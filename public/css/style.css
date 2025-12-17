@@ -332,6 +332,26 @@ body {
   .stat-value {
     font-size: 13px;
   }
+
+  .sentiment-item {
+    padding: 14px;
+  }
+
+  .sentiment-value {
+    font-size: 18px;
+  }
+
+  .sentiment-label {
+    font-size: 10px;
+  }
+
+  .overview-value {
+    font-size: 26px;
+  }
+
+  .overview-icon {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -379,6 +399,46 @@ body {
 
   .market-item-price {
     font-size: 13px;
+  }
+
+  .sentiment-grid {
+    gap: 12px;
+  }
+
+  .sentiment-item {
+    padding: 12px;
+  }
+
+  .sentiment-value {
+    font-size: 16px;
+  }
+
+  .sentiment-label {
+    font-size: 10px;
+  }
+
+  .sentiment-subtext {
+    font-size: 11px;
+  }
+
+  .fear-greed-bar {
+    height: 6px;
+  }
+
+  .overview-value {
+    font-size: 24px;
+  }
+
+  .overview-icon {
+    font-size: 30px;
+  }
+
+  .overview-label {
+    font-size: 11px;
+  }
+
+  .overview-subtext {
+    font-size: 10px;
   }
 }
 
@@ -445,6 +505,67 @@ body {
   .market-item-change {
     font-size: 11px;
   }
+
+  .sentiment-grid {
+    gap: 10px;
+  }
+
+  .sentiment-item {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .sentiment-value {
+    font-size: 14px;
+  }
+
+  .sentiment-label {
+    font-size: 9px;
+  }
+
+  .sentiment-subtext {
+    font-size: 10px;
+  }
+
+  .fear-greed-bar {
+    height: 6px;
+    margin-top: 6px;
+  }
+
+  .fear-greed-indicator {
+    height: 14px;
+  }
+
+  .overview-grid {
+    gap: 10px;
+  }
+
+  .overview-item {
+    padding: 18px 14px;
+  }
+
+  .overview-value {
+    font-size: 22px;
+  }
+
+  .overview-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .overview-label {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .overview-subtext {
+    font-size: 9px;
+    margin-top: 3px;
+  }
+
+  .overview-subtext:first-of-type {
+    margin-top: 6px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -473,6 +594,58 @@ body {
   .two-column-grid {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .sentiment-grid {
+    gap: 8px;
+  }
+
+  .sentiment-item {
+    padding: 8px;
+  }
+
+  .sentiment-value {
+    font-size: 13px;
+  }
+
+  .sentiment-label {
+    font-size: 9px;
+  }
+
+  .sentiment-subtext {
+    font-size: 9px;
+  }
+
+  .fear-greed-bar {
+    height: 5px;
+  }
+
+  .fear-greed-indicator {
+    height: 12px;
+  }
+
+  .overview-grid {
+    gap: 8px;
+  }
+
+  .overview-item {
+    padding: 14px 10px;
+  }
+
+  .overview-value {
+    font-size: 20px;
+  }
+
+  .overview-icon {
+    font-size: 24px;
+  }
+
+  .overview-label {
+    font-size: 9px;
+  }
+
+  .overview-subtext {
+    font-size: 8px;
   }
 }
 
