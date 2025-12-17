@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Configuration</title>
+  <link rel="stylesheet" href="css/config.css">
+</head>
+<body>
+  <div class="config-container">
+    <div class="config-header">
+      <h1>Dashboard Configuration</h1>
+      <div class="header-actions">
+        <a href="/" class="btn btn-secondary">Back to Dashboard</a>
+        <button id="saveBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+
+    <div class="config-content">
+      <!-- Cryptocurrency Section -->
+      <section class="config-section">
+        <h2>Cryptocurrency</h2>
+        <div class="form-group">
+          <label>Refresh Interval (seconds)</label>
+          <input type="number" id="refreshInterval" min="30" max="300" step="10" />
+          <small>Recommended: 60-120 seconds for power saving</small>
+        </div>
+        <div class="form-group">
+          <label>Selected Tokens</label>
+          <div id="cryptoTokens" class="token-list"></div>
+          <button class="btn btn-small btn-secondary" onclick="addCryptoToken()">+ Add Token</button>
+          <small>Token IDs from CoinGecko (e.g., bitcoin, ethereum, cardano)</small>
+        </div>
+      </section>
+
+      <!-- Forex Section -->
+      <section class="config-section">
+        <h2>Forex Exchange Rates</h2>
+        <div id="forexPairs" class="forex-list"></div>
+        <button class="btn btn-small btn-secondary" onclick="addForexPair()">+ Add Forex Pair</button>
+        <small>Currency codes: USD, EUR, GBP, SGD, THB, MYR, etc.</small>
+      </section>
+
+      <!-- Market Indices Section -->
+      <section class="config-section">
+        <h2>Market Indices</h2>
+        <div id="marketIndices" class="market-list"></div>
+        <button class="btn btn-small btn-secondary" onclick="addMarketIndex()">+ Add Index</button>
+        <small>Symbol format: ^GSPC (S&P 500), ^IXIC (Nasdaq), ^DJI (Dow Jones)</small>
+      </section>
+
+      <!-- Stocks Section -->
+      <section class="config-section">
+        <h2>Stocks</h2>
+        <div id="stocksList" class="market-list"></div>
+        <button class="btn btn-small btn-secondary" onclick="addStock()">+ Add Stock</button>
+        <small>Enter stock ticker symbols (e.g., AAPL, TSLA, NVDA)</small>
+      </section>
+
+      <!-- Video Background Section -->
+      <section class="config-section">
+        <h2>Video Background</h2>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="videoEnabled" />
+            <span>Enable Video Background</span>
+          </label>
+          <small>Show animated video backgrounds based on market sentiment</small>
+        </div>
+
+        <div class="form-group">
+          <label>Video Mode</label>
+          <div class="video-mode-options">
+            <label class="radio-label">
+              <input type="radio" name="videoMode" value="auto" id="videoModeAuto" checked>
+              <span>Automatic (Based on Market Sentiment)</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="videoMode" value="manual" id="videoModeManual">
+              <span>Manual Selection</span>
+            </label>
+          </div>
+          <small>Choose between automatic video switching or manual selection</small>
+        </div>
+
+        <div class="form-group" id="manualVideoSelector" style="display: none;">
+          <label>Selected Video Background</label>
+          <select id="manualVideoChoice">
+            <option value="green">Green (Bullish)</option>
+            <option value="neutral" selected>Neutral</option>
+            <option value="red">Red (Bearish)</option>
+          </select>
+          <small>This video will be displayed when manual mode is active</small>
+        </div>
+
+        <div class="form-group">
+          <label>Green Video (Bullish Market - Crypto avg change &gt; 0.5%)</label>
+          <input type="text" id="greenVideo" placeholder="green.mp4" />
+          <small>Video filename in the public folder (e.g., green.mp4)</small>
+        </div>
+        <div class="form-group">
+          <label>Neutral Video (Neutral Market - Crypto avg change -0.5% to 0.5%)</label>
+          <input type="text" id="neutralVideo" placeholder="neutral.mp4" />
+          <small>Video filename in the public folder (e.g., neutral.mp4)</small>
+        </div>
+        <div class="form-group">
+          <label>Red Video (Bearish Market - Crypto avg change &lt; -0.5%)</label>
+          <input type="text" id="redVideo" placeholder="red.mp4" />
+          <small>Video filename in the public folder (e.g., red.mp4)</small>
+        </div>
+      </section>
+
+      <!-- Power Saving Section -->
+      <section class="config-section">
+        <h2>Display Settings</h2>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="powerSaving" />
+            <span>Enable Power Saving Mode (24/7 Display Panel)</span>
+          </label>
+          <small>Optimizes refresh intervals and reduces power consumption</small>
+        </div>
+      </section>
+    </div>
+
+    <div class="config-footer">
+      <button id="resetBtn" class="btn btn-danger">Reset to Default</button>
+      <button id="saveFooterBtn" class="btn btn-primary">Save Changes</button>
+    </div>
+  </div>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="js/config.js"></script>
+</body>
+</html>

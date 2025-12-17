@@ -1,0 +1,17 @@
+{
+  "name": "auxiliary-crypto-dashboard",
+  "version": "1.0.0",
+  "description": "Lightweight auxiliary dashboard for crypto prices and system monitoring",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "keywords": ["dashboard", "crypto", "system-monitor"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "systeminformation": "^5.21.20"
+  }
+}

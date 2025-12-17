@@ -1,0 +1,254 @@
+{
+  "crypto": {
+    "enabled": true,
+    "coinLimit": 50,
+    "refreshInterval": 60,
+    "tokens": [
+      "bitcoin",
+      "ethereum",
+      "binancecoin",
+      "solana"
+    ]
+  },
+  "forex": {
+    "enabled": true,
+    "pairs": [
+      {
+        "from": "USD",
+        "to": "SGD",
+        "flag": "SG"
+      },
+      {
+        "from": "USD",
+        "to": "THB",
+        "flag": "TH"
+      },
+      {
+        "from": "USD",
+        "to": "MYR",
+        "flag": "MY"
+      }
+    ]
+  },
+  "market": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "icon": "📈"
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "icon": "💻"
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "icon": "📊"
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "icon": "📉"
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "icon": "⚡"
+      },
+      {
+        "symbol": "^FTSE",
+        "name": "FTSE 100",
+        "icon": "🇬🇧"
+      },
+      {
+        "symbol": "^GDAXI",
+        "name": "DAX",
+        "icon": "🇩🇪"
+      },
+      {
+        "symbol": "^FCHI",
+        "name": "CAC 40",
+        "icon": "🇫🇷"
+      },
+      {
+        "symbol": "^N225",
+        "name": "Nikkei 225",
+        "icon": "🇯🇵"
+      },
+      {
+        "symbol": "^HSI",
+        "name": "Hang Seng",
+        "icon": "🇭🇰"
+      },
+      {
+        "symbol": "000001.SS",
+        "name": "Shanghai",
+        "icon": "🇨🇳"
+      },
+      {
+        "symbol": "^AXJO",
+        "name": "ASX 200",
+        "icon": "🇦🇺"
+      },
+      {
+        "symbol": "^BVSP",
+        "name": "Bovespa",
+        "icon": "🇧🇷"
+      },
+      {
+        "symbol": "^STOXX50E",
+        "name": "Euro Stoxx 50",
+        "icon": "🇪🇺"
+      },
+      {
+        "symbol": "^KS11",
+        "name": "KOSPI",
+        "icon": "🇰🇷"
+      },
+      {
+        "symbol": "^TWII",
+        "name": "Taiwan Weighted",
+        "icon": "🇹🇼"
+      },
+      {
+        "symbol": "^GSPTSE",
+        "name": "TSX Composite",
+        "icon": "🇨🇦"
+      },
+      {
+        "symbol": "^MXX",
+        "name": "IPC Mexico",
+        "icon": "🇲🇽"
+      },
+      {
+        "symbol": "^NSEI",
+        "name": "Nifty 50",
+        "icon": "🇮🇳"
+      },
+      {
+        "symbol": "^SSMI",
+        "name": "SMI",
+        "icon": "🇨🇭"
+      }
+    ],
+    "stocks": [
+      {
+        "symbol": "AAPL",
+        "name": "Apple",
+        "icon": "🍎"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft",
+        "icon": "💻"
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Google",
+        "icon": "🔍"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon",
+        "icon": "📦"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "NVIDIA",
+        "icon": "🎮"
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla",
+        "icon": "🚗"
+      },
+      {
+        "symbol": "META",
+        "name": "Meta",
+        "icon": "📱"
+      },
+      {
+        "symbol": "BRK-B",
+        "name": "Berkshire",
+        "icon": "💼"
+      },
+      {
+        "symbol": "LLY",
+        "name": "Eli Lilly",
+        "icon": "💊"
+      },
+      {
+        "symbol": "V",
+        "name": "Visa",
+        "icon": "💳"
+      },
+      {
+        "symbol": "UNH",
+        "name": "UnitedHealth",
+        "icon": "🏥"
+      },
+      {
+        "symbol": "XOM",
+        "name": "Exxon Mobil",
+        "icon": "⛽"
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan",
+        "icon": "🏦"
+      },
+      {
+        "symbol": "JNJ",
+        "name": "Johnson & Johnson",
+        "icon": "🩹"
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart",
+        "icon": "🛒"
+      },
+      {
+        "symbol": "MA",
+        "name": "Mastercard",
+        "icon": "💳"
+      },
+      {
+        "symbol": "PG",
+        "name": "Procter & Gamble",
+        "icon": "🧴"
+      },
+      {
+        "symbol": "HD",
+        "name": "Home Depot",
+        "icon": "🔨"
+      },
+      {
+        "symbol": "CVX",
+        "name": "Chevron",
+        "icon": "⛽"
+      },
+      {
+        "symbol": "ABBV",
+        "name": "AbbVie",
+        "icon": "💊"
+      }
+    ]
+  },
+  "display": {
+    "theme": "dark",
+    "videoBackground": {
+      "enabled": true,
+      "mode": "auto",
+      "manualChoice": "red",
+      "greenVideo": "green.mp4",
+      "neutralVideo": "neutral.mp4",
+      "redVideo": "red.mp4"
+    }
+  },
+  "powerSaving": {
+    "enabled": true,
+    "description": "Power-optimized for 24/7 display panel usage"
+  }
+}
