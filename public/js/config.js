@@ -52,8 +52,6 @@ async function loadConfig() {
     // Render lists
     renderCryptoTokens();
     renderForexPairs();
-    renderMarketIndices();
-    renderStocks();
   } catch (error) {
     showNotification('Failed to load configuration', 'error');
     console.error('Load config error:', error);
@@ -119,68 +117,6 @@ function removeForexPair(index) {
   renderForexPairs();
 }
 
-// Render Market Indices
-function renderMarketIndices() {
-  const container = document.getElementById('marketIndices');
-  const indices = config.market?.indices || [];
-
-  container.innerHTML = indices.map((item, index) => `
-    <div class="market-item-config">
-      <input type="text" value="${item.symbol}" onchange="updateMarketIndex(${index}, 'symbol', this.value)" placeholder="Symbol (e.g., ^GSPC)">
-      <input type="text" value="${item.name}" onchange="updateMarketIndex(${index}, 'name', this.value)" placeholder="Name (e.g., S&P 500)">
-      <input type="text" value="${item.icon}" onchange="updateMarketIndex(${index}, 'icon', this.value)" placeholder="Icon" maxlength="2">
-      <button class="btn btn-remove" onclick="removeMarketIndex(${index})">×</button>
-    </div>
-  `).join('');
-}
-
-function addMarketIndex() {
-  if (!config.market) config.market = { indices: [], stocks: [] };
-  if (!config.market.indices) config.market.indices = [];
-  config.market.indices.push({ symbol: '', name: '', icon: '📈' });
-  renderMarketIndices();
-}
-
-function updateMarketIndex(index, field, value) {
-  config.market.indices[index][field] = value.trim();
-}
-
-function removeMarketIndex(index) {
-  config.market.indices.splice(index, 1);
-  renderMarketIndices();
-}
-
-// Render Stocks
-function renderStocks() {
-  const container = document.getElementById('stocksList');
-  const stocks = config.market?.stocks || [];
-
-  container.innerHTML = stocks.map((item, index) => `
-    <div class="market-item-config">
-      <input type="text" value="${item.symbol}" onchange="updateStock(${index}, 'symbol', this.value)" placeholder="Symbol (e.g., AAPL)">
-      <input type="text" value="${item.name}" onchange="updateStock(${index}, 'name', this.value)" placeholder="Name (e.g., Apple)">
-      <input type="text" value="${item.icon}" onchange="updateStock(${index}, 'icon', this.value)" placeholder="Icon" maxlength="2">
-      <button class="btn btn-remove" onclick="removeStock(${index})">×</button>
-    </div>
-  `).join('');
-}
-
-function addStock() {
-  if (!config.market) config.market = { indices: [], stocks: [] };
-  if (!config.market.stocks) config.market.stocks = [];
-  config.market.stocks.push({ symbol: '', name: '', icon: '📊' });
-  renderStocks();
-}
-
-function updateStock(index, field, value) {
-  config.market.stocks[index][field] = value.trim();
-}
-
-function removeStock(index) {
-  config.market.stocks.splice(index, 1);
-  renderStocks();
-}
-
 // Save Configuration
 async function saveConfig() {
   try {
@@ -205,12 +141,6 @@ async function saveConfig() {
     config.crypto.tokens = config.crypto.tokens.filter(t => t.trim() !== '');
     if (config.forex?.pairs) {
       config.forex.pairs = config.forex.pairs.filter(p => p.from && p.to);
-    }
-    if (config.market?.indices) {
-      config.market.indices = config.market.indices.filter(i => i.symbol && i.name);
-    }
-    if (config.market?.stocks) {
-      config.market.stocks = config.market.stocks.filter(s => s.symbol && s.name);
     }
 
     // Save to server
@@ -253,29 +183,6 @@ async function resetToDefault() {
         { "from": "USD", "to": "SGD", "flag": "🇸🇬" },
         { "from": "USD", "to": "THB", "flag": "🇹🇭" },
         { "from": "USD", "to": "MYR", "flag": "🇲🇾" }
-      ]
-    },
-    "market": {
-      "indices": [
-        { "symbol": "^GSPC", "name": "S&P 500", "icon": "📈" },
-        { "symbol": "^IXIC", "name": "Nasdaq Composite", "icon": "💻" },
-        { "symbol": "^DJI", "name": "Dow Jones", "icon": "🏛️" },
-        { "symbol": "^RUT", "name": "Russell 2000", "icon": "📊" },
-        { "symbol": "^VIX", "name": "VIX", "icon": "⚡" }
-      ],
-      "stocks": [
-        { "symbol": "AAPL", "name": "Apple", "icon": "🍎" },
-        { "symbol": "MSFT", "name": "Microsoft", "icon": "💻" },
-        { "symbol": "GOOGL", "name": "Google", "icon": "🔍" },
-        { "symbol": "AMZN", "name": "Amazon", "icon": "📦" },
-        { "symbol": "NVDA", "name": "NVIDIA", "icon": "🎮" },
-        { "symbol": "TSLA", "name": "Tesla", "icon": "⚡" },
-        { "symbol": "META", "name": "Meta", "icon": "📱" },
-        { "symbol": "NFLX", "name": "Netflix", "icon": "🎬" },
-        { "symbol": "JPM", "name": "JPMorgan Chase", "icon": "🏦" },
-        { "symbol": "V", "name": "Visa", "icon": "💳" },
-        { "symbol": "DIS", "name": "Disney", "icon": "🏰" },
-        { "symbol": "BA", "name": "Boeing", "icon": "✈️" }
       ]
     },
     "display": {
