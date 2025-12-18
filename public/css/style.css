@@ -316,7 +316,12 @@ body {
   }
 
   .card {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .card-section-title {
+    font-size: 13px;
+    margin-bottom: 12px;
   }
 
   .crypto-price,
@@ -333,16 +338,30 @@ body {
     font-size: 13px;
   }
 
+  .sentiment-grid {
+    gap: 10px;
+  }
+
   .sentiment-item {
-    padding: 14px;
+    padding: 10px;
+    gap: 6px;
   }
 
   .sentiment-value {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .sentiment-label {
+    font-size: 9px;
+  }
+
+  .sentiment-subtext {
     font-size: 10px;
+  }
+
+  .fear-greed-bar {
+    height: 6px;
+    margin-top: 6px;
   }
 
   .overview-value {
