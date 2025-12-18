@@ -900,6 +900,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+#cryptoSentiment {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
   overflow: hidden;
 }
 
@@ -987,6 +996,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  align-content: start;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .sentiment-item {
