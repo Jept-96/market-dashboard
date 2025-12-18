@@ -339,16 +339,16 @@ body {
   }
 
   .sentiment-grid {
-    gap: 10px;
+    gap: 8px;
   }
 
   .sentiment-item {
-    padding: 10px;
-    gap: 6px;
+    padding: 8px;
+    gap: 4px;
   }
 
   .sentiment-value {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .sentiment-label {
@@ -356,12 +356,18 @@ body {
   }
 
   .sentiment-subtext {
-    font-size: 10px;
+    font-size: 9px;
+    margin-top: 2px;
   }
 
   .fear-greed-bar {
-    height: 6px;
-    margin-top: 6px;
+    height: 5px;
+    margin-top: 4px;
+  }
+
+  .fear-greed-indicator {
+    height: 13px;
+    top: -4px;
   }
 
   .overview-value {
@@ -1014,17 +1020,15 @@ body {
 .sentiment-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
   align-content: start;
-  max-height: 100%;
-  overflow: hidden;
 }
 
 .sentiment-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px;
+  gap: 6px;
+  padding: 12px;
   background: rgba(11, 14, 17, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1041,14 +1045,14 @@ body {
 }
 
 .sentiment-label {
-  font-size: 11px;
+  font-size: 10px;
   color: #848E9C;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .sentiment-value {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: #EAECEF;
 }
@@ -1066,17 +1070,17 @@ body {
 }
 
 .sentiment-subtext {
-  font-size: 12px;
+  font-size: 11px;
   color: #848E9C;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .fear-greed-bar {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: linear-gradient(to right, #F6465D 0%, #FFA726 50%, #0ECB81 100%);
   border-radius: 4px;
-  margin-top: 8px;
+  margin-top: 6px;
   position: relative;
 }
 
