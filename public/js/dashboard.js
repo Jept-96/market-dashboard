@@ -296,6 +296,7 @@ function renderMarketOverview(data) {
         </div>
         <div class="overview-subtext">${data.stocks.trend}</div>
         <div class="overview-subtext">${data.stocks.session}</div>
+        <div class="overview-subtext">S&P 500: ${data.stocks.price.toFixed(2)}</div>
       </div>
 
       <div class="overview-item">
@@ -307,6 +308,7 @@ function renderMarketOverview(data) {
         </div>
         <div class="overview-subtext">${data.forex.strength}</div>
         <div class="overview-subtext">${data.forex.session}</div>
+        <div class="overview-subtext">${data.forex.dollarTrend}</div>
       </div>
 
       <div class="overview-item">
@@ -317,6 +319,7 @@ function renderMarketOverview(data) {
         </div>
         <div class="overview-subtext">${data.volatility}</div>
         <div class="overview-subtext">${data.marketDirection}</div>
+        <div class="overview-subtext">VIX: ${data.vixValue}</div>
       </div>
     </div>
   `;

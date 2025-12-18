@@ -259,26 +259,31 @@ app.get('/api/market-overview', async (req, res) => {
       stocks: {
         name: 'S&P 500',
         change: sp500 ? sp500.change : 0,
+        price: sp500 ? sp500.price : 0,
         trend: stockTrend,
         session: stockSession
       },
       forex: {
         name: 'DXY',
         change: dxy ? dxy.change : 0,
+        price: dxy ? dxy.price : 0,
         strength: dollarStrength,
+        dollarTrend: dollarTrend,
         session: forexSession
       },
       sentiment: sentiment,
       volatility: volatility,
+      vixValue: vix ? vix.price.toFixed(2) : 'N/A',
       marketDirection: marketDirection
     });
   } catch (error) {
     console.error('Market overview API error:', error);
     res.json({
-      stocks: { name: 'S&P 500', change: 0, trend: 'Neutral', session: 'US Closed' },
-      forex: { name: 'DXY', change: 0, strength: 'Moderate', session: 'Market Open' },
+      stocks: { name: 'S&P 500', change: 0, price: 0, trend: 'Neutral', session: 'US Closed' },
+      forex: { name: 'DXY', change: 0, price: 0, strength: 'Moderate', dollarTrend: 'Steady', session: 'Market Open' },
       sentiment: 'Neutral',
       volatility: 'Normal Vol',
+      vixValue: 'N/A',
       marketDirection: 'Stable'
     });
   }
